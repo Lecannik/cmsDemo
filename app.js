@@ -21,7 +21,7 @@ async function initApp() {
 
     let user = new CRUDService({login: "admin", pass: "123456789"});
 
-    await user.createOne();
+    await user.createOneUser();
 
 
 }
