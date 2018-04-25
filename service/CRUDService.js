@@ -111,7 +111,7 @@ class CRUDService {
 
         let lastValue = {postName: "test name for post"};
 
-        console.log("\x1b[42m",lastValue);
+
 
         let newvalues = {$set: {postName: "Canyon 123"} };
         dbPool.collection("posts").updateOne(lastValue, newvalues, function(err, res) {

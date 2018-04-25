@@ -9,13 +9,7 @@ let CRUDService = require("../service/CRUDService");
 
 /* GET users listing. */
 router.post('/createpost', function(req, res, next) {
-
-         console.log("\x1b[42m", "Testing API 'createpost' req " + req.body);
-         console.log("\x1b[42m", "Testing API 'createpost' res " + res.body);
     try {
-
-
-
 
         let result = new CRUDService({postName: "test name for post", postText: "test description for post"});
         result.createPost();
@@ -40,7 +34,6 @@ router.get('/getall', async(req, res, next) =>{
         let CRUD = new CRUDService({colName: collection});
         let result  = await CRUD.getAllCollection();
         res.json({"code": 0, "resultFromDb": result});
-
 
     }
     catch (err) {
