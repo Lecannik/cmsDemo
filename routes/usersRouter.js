@@ -45,7 +45,6 @@ router.get('/getall', async(req, res, next) =>{
     }
     catch (err) {
 
-        console.log("\x1b[42m",err);
 
         res.json({"code": 1, "resultErrorFromDb": err});
 
