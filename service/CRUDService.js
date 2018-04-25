@@ -7,7 +7,7 @@ class CRUDService {
 
     constructor(objParams) {
 
-        let arrPropsForThisClass = ['login', 'pass', 'postName', 'postText', 'postId'];
+        let arrPropsForThisClass = ['login', 'pass', 'postName', 'postText', 'postId', 'colName'];
 
             this.objParams = objParams;
 
@@ -72,17 +72,16 @@ class CRUDService {
 
     }
 
-    async getAllCollection(collectionName) {
+    async getAllCollection() {
 
         try {
 
 
-
-            let dbPool = poolDB.getDBPool();
-
+            let dbPool = poolDB.getConnect();
 
 
-            let col = dbPool.collection(collectionName);
+
+            let col = dbPool.collection(this.objParams.colName);
 
             let result = await col.find({}).toArray();
 

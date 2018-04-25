@@ -36,9 +36,10 @@ router.get('/getall', async(req, res, next) =>{
 
     try {
 
-        let CRUD = new CRUDService({});
-        let result  = await CRUD.getAllCollection("users");
-        console.log("\x1b[42m",result);
+        let collection = req.query.id;
+        console.log("\x1b[42m", collection);
+        let CRUD = new CRUDService({colName: collection});
+        let result  = await CRUD.getAllCollection();
         res.json({"code": 0, "resultFromDb": result});
 
 

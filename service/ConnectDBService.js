@@ -1,5 +1,5 @@
 const {MongoClient, Logger } = require('mongodb');
-//Logger.setLevel(process.env.LEVEL_DB_LOG);
+Logger.setLevel(process.env.LEVEL_DB_LOG);
 
 
 let state = {
